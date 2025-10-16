@@ -23,6 +23,7 @@ If you experience any errors while trying to install kickstart, run `:checkhealt
 -- test de folding.
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+set foldlevelstart = 3
 
 
 -- Set <space> as the leader key
