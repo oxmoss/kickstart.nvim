@@ -211,13 +211,6 @@ require('lazy').setup({
       },
     },
   },
-  {
-    'nvim-java/nvim-java',
-     config = function()
-        require('java').setup({}),
-        require('lspconfig').jdtls.setup({}),
-      end,
-  }, -- Java LSP + lombok + build/run/test
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
@@ -586,6 +579,21 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+          -- Your JDTLS configuration goes here
+          --jdtls = {
+            -- settings = {
+            --   java = {
+            --     configuration = {
+            --       runtimes = {
+            --         {
+            --           name = "JavaSE-23",
+            --           path = "/usr/local/sdkman/candidates/java/23-tem",
+            --         },
+            --       },
+            --     },
+            --   },
+            -- },
+          --},
 
         lua_ls = {
           -- cmd = { ... },
@@ -857,6 +865,13 @@ require('lazy').setup({
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
+  {-- Java LSP + lombok + build/run/testa/nvim-java',
+    'nvim-jav
+    config = false,
+    dependencies = {
+      "neovim/nvim-lspconfig",
+    }
+  }, 
   -- require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
