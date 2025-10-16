@@ -211,7 +211,13 @@ require('lazy').setup({
       },
     },
   },
-  {'nvim-java/nvim-java'}, -- Java LSP + lombok + build/run/test
+  {
+    'nvim-java/nvim-java',
+     config = function()
+        require('java').setup(),
+        require('lspconfig').jdtls.setup({}),
+      end,
+  }, -- Java LSP + lombok + build/run/test
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
