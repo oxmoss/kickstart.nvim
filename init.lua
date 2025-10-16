@@ -866,7 +866,7 @@ require('lazy').setup({
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
   {-- Java LSP + lombok + build/run/testa/nvim-java',
-    'nvim-jav
+    'nvim-java/nvim-java",
     config = false,
     dependencies = {
       "neovim/nvim-lspconfig",
