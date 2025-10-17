@@ -19,6 +19,9 @@
 If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
 
 --]]
+-- From this, jdtls add lombok to the jvm args
+local lombok = vim.fn.stdpath('data') .. '/lombok/lombok.jar'
+vim.env.JDTLS_JVM_ARGS = ('-javaagent:%s -Xbootclasspath/a:%s'):format(lombok, lombok)
 
 -- test de folding.
 vim.wo.foldmethod = 'expr'
